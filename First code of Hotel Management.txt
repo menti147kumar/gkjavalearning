@@ -1,0 +1,62 @@
+int Availablecount = 10;
+
+            while (true)
+            {
+                bool checkIn = false, checkOut = false;
+
+                Console.WriteLine("How may I help You!\nDo you want to Check-In(y/n): ");
+                Console.WriteLine("Press Q to Quit the Application.");
+
+                string checkInAnswer = Console.ReadLine();
+
+                if (checkInAnswer.ToUpper() == "Y")
+                {
+                    checkIn = true;
+                }
+                else if (checkInAnswer.ToUpper() == "N")
+                {
+                    Console.WriteLine("\nDo you want to Check-Out(y/n): ");
+                    string checkOutAnswer = Console.ReadLine();
+
+                    if (checkOutAnswer.ToUpper() == "Y")
+                    {
+                        checkOut = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please go to the Main Menu.");
+                    }
+                }
+                else if (checkInAnswer.ToUpper() == "Q")
+                {
+                    Console.WriteLine("Closing Application.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Going to the Main Menu.\n\n");
+                }
+
+                if (checkIn)
+                {
+                    Console.WriteLine("We have available room {0}", Availablecount);
+                    Console.WriteLine("How many rooms do you want to book?");
+                    int Book_Room = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("No. of Rooms booked for you is {0}", Book_Room);
+                    Availablecount = Availablecount - Book_Room;
+                    Console.WriteLine("Now remaining available room are {0}", Availablecount);
+                }
+
+                if (checkOut)
+                {
+                    Console.WriteLine("We have available room{0}", Availablecount);
+                    Console.WriteLine("How many rooms do you want to check out?");
+                    int check_out_Room = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("No. of Rooms checked out from you is: {0}", check_out_Room);
+                    Availablecount = Availablecount + check_out_Room;
+                    Console.WriteLine("Now remaining available rooms are {0}", Availablecount);
+                }
+            }
+
+
+
