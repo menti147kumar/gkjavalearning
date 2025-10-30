@@ -79,22 +79,10 @@ public class VotingEligiblityCheck
                 System.out.println("Thank you for your time");
                 break;
             }
-
         }
 
 
-
-
-
-
-
-
-
-
-
-
     }
-
 
 
 }
